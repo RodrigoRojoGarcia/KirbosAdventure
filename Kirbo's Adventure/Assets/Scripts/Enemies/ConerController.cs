@@ -85,7 +85,6 @@ public class ConerController : EnemyController
                 }
             }
             if (turn) {
-                Debug.Log("UwU");
                 Flip();
                 collidersInFront = new Collider2D[8];
             } else
@@ -98,7 +97,6 @@ public class ConerController : EnemyController
                 }
                 if (turn)
                 {
-                    Debug.Log("OwO");
                     Flip();
                 }
 

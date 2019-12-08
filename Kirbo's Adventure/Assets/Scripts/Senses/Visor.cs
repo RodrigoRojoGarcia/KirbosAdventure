@@ -71,7 +71,7 @@ public class Visor : MonoBehaviour
                 playerseen = true;
                 if (thisAgent.GetComponent<EnemyController>() != null)
                 {
-                    Debug.Log("UwU");
+
                     thisAgent.GetComponent<EnemyController>().SeePlayer();
                 }
 
@@ -84,7 +84,7 @@ public class Visor : MonoBehaviour
         {
             if(thisAgent.GetComponent<EnemyController>() != null)
             {
-                Debug.Log("uwu");
+                
                 thisAgent.GetComponent<EnemyController>().StopSeePlayer();
             }
         }

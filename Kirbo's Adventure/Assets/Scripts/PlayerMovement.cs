@@ -82,4 +82,6 @@ public class PlayerMovement : MonoBehaviour
             health--;
         }
     }
+
+    public void addHealth(int h) { this.health += h; }
 }
