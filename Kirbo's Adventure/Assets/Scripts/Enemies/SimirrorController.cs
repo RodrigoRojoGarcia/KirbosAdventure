@@ -345,4 +345,10 @@ public class SimirrorController : EnemyController
         Destroy(gameObject);
 
     }
+
+    public new void StopSeePlayer()
+    {
+        kirboInSight = false;
+        xCenterPatrol = transform.position.x;
+    }
 }
