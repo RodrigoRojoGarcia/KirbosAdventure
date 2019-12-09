@@ -76,7 +76,7 @@ public class SimirrorController : EnemyController
         base.Awake();
         rigidBody.velocity = new Vector2(speed, 0);
         xCenterPatrol = transform.position.x;
-        kirboInSight = true;
+        
     }
 
     private void Update()
