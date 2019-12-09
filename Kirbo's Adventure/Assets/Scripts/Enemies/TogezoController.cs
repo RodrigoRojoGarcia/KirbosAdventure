@@ -55,13 +55,4 @@ public class TogezoController : EnemyController
         }
     }
 
-    public override void SeePlayer()
-    {
-        
-    }
-
-    public override void StopSeePlayer()
-    {
-
-    }
 }

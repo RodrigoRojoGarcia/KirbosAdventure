@@ -8,11 +8,10 @@ public class ConerController : EnemyController
 
     [SerializeField] private float speed;
 
-    private bool hidedInShell = false;
 
     private bool facingRight = false;
 
-    private Rigidbody2D rigidBody;
+
 
     [SerializeField] private GameObject inFrontCollider;
     [SerializeField] private GameObject downInFrontCollider;
@@ -21,7 +20,6 @@ public class ConerController : EnemyController
     private Collider2D[] collidersInFront = new Collider2D[8];
     private Collider2D[] collidersDownInFront = new Collider2D[8];
 
-    private Animator animator;
 
 
     [SerializeField] private LayerMask whatIsGround;
@@ -34,12 +32,6 @@ public class ConerController : EnemyController
     }
 
 
-    private void Awake()
-    {
-        rigidBody = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
-    }
-
     // Start is called before the first frame update
     void Start()
     {
@@ -49,13 +41,13 @@ public class ConerController : EnemyController
     // Update is called once per frame
     void Update()
     {
-        animator.SetBool("hideInShell", hidedInShell);
+        animator.SetBool("hideInShell", kirboInSight);
     }
 
     private void FixedUpdate()
     {
 
-        if (!hidedInShell)
+        if (!kirboInSight)
         {
             Vector2 vel = rigidBody.velocity;
 
@@ -119,14 +111,6 @@ public class ConerController : EnemyController
     }
 
 
-    public override void SeePlayer()
-    {
-        this.hidedInShell = true;
-    }
-    public override void StopSeePlayer()
-    {
-        this.hidedInShell = false;
-    }
 
 
     

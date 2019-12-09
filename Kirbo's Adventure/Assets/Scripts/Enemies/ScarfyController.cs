@@ -17,11 +17,6 @@ public class ScarfyController : EnemyController
 
     private bool grounded;
 
-    private bool pursue = false;
-
-    private Animator animator;
-
-    private Rigidbody2D rigidBody;
 
     private Collider2D[] collidersInExplosionArea = new Collider2D[8];
 
@@ -42,22 +37,15 @@ public class ScarfyController : EnemyController
     }
 
 
-    private void Awake()
-    {
-        animator = GetComponent<Animator>();
-        rigidBody = GetComponent<Rigidbody2D>();
-
-    }
-
     private void Update()
     {
-        animator.SetBool("pursue", pursue);
+        animator.SetBool("pursue", kirboInSight);
     }
 
     private void FixedUpdate()
     {
 
-        if (pursue && !exploding)
+        if (kirboInSight && !exploding)
         {
             
             grounded = false;
@@ -95,7 +83,7 @@ public class ScarfyController : EnemyController
                     
                     if (col.gameObject == GameManager.instance.kirbo.gameObject)
                     {
-                        Debug.Log("UwU");
+                        
                         explode();
                     }
                 }
@@ -105,14 +93,6 @@ public class ScarfyController : EnemyController
         }
     }
 
-    public override void SeePlayer()
-    {
-        this.pursue = true;
-    }
-    public override void StopSeePlayer()
-    {
-        this.pursue = false;
-    }
 
     public void explode()
     {

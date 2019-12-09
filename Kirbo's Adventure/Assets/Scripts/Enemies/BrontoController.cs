@@ -22,25 +22,13 @@ public class BrontoController : EnemyController
     private bool patrol;
     private bool pursue;
 
-    private Rigidbody2D rigidBody;
-
-
     private bool facingRight = false;
 
-    private bool kirboInSight = false;
 
     private bool midDash = false;
 
     private bool firing = false;
 
-
-    private void Awake()
-    {
-        rigidBody = GetComponent<Rigidbody2D>();
-    }
-
-
-   
 
     private void FixedUpdate()
     {
@@ -159,15 +147,6 @@ public class BrontoController : EnemyController
 
 
 
-    public override void SeePlayer()
-    {
-        this.kirboInSight = true;
-    }
-
-    public override void StopSeePlayer()
-    {
-        this.kirboInSight = false;
-    }
 
     private void Flip()
     {

@@ -30,13 +30,10 @@ public class SimirrorController : EnemyController
     [SerializeField] private GameObject projectileSpawner;
 
 
-    private bool kirboInSight = false;
     private bool kirboCloseEnough = false;
     private bool firing = false;
     private bool facingRight = true;
 
-    private Rigidbody2D rigidBody;
-    private Animator animator;
 
 
     [SerializeField] private float tpRadius;
@@ -76,8 +73,7 @@ public class SimirrorController : EnemyController
 
     private void Awake()
     {
-        rigidBody = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+        base.Awake();
         rigidBody.velocity = new Vector2(speed, 0);
         xCenterPatrol = transform.position.x;
         kirboInSight = true;
@@ -207,18 +203,6 @@ public class SimirrorController : EnemyController
 
         rigidBody.velocity = new Vector2();
         InvokeRepeating("Fire", 0, shotDelay);
-    }
-
-    public override void SeePlayer()
-    {
-        
-        kirboInSight = true;
-    }
-
-    public override void StopSeePlayer()
-    {
-        Debug.Log("Not see");
-        kirboInSight = false;
     }
 
     private void Flip()

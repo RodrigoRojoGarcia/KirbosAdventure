@@ -8,9 +8,25 @@ public abstract class EnemyController : MonoBehaviour
     [SerializeField] private GameObject thisPrefab;
 
 
+    protected bool kirboInSight = false;
+    protected Rigidbody2D rigidBody;
+    protected Animator animator;
+
+    protected virtual void Awake()
+    {
+        rigidBody = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+    }
+
     public GameObject getThis() { return thisPrefab; }
 
 
-    public abstract void SeePlayer();
-    public abstract void StopSeePlayer();
+    public void SeePlayer()
+    {
+        kirboInSight = true;
+    }
+    public void StopSeePlayer()
+    {
+        kirboInSight = false;
+    }
 }
