@@ -161,8 +161,6 @@ public class BrontoController : EnemyController
     public void patrolMovement(float actualHeight)
     {
         StopFiring();
-        
-
         Vector2 vel = rigidBody.velocity;
         if (transform.position.y > actualHeight + heightTreshhold)
         {
@@ -186,19 +184,13 @@ public class BrontoController : EnemyController
         dir.Normalize();
 
         rigidBody.velocity = dir * dashSpeed;
-        
-
-
     }
 
     public void evadeMovement(float actualHeight)
     {
-
         StopFiring();
         Vector2 dir =  GameManager.instance.kirbo.gameObject.transform.position - transform.position;
         dir.Normalize();
-        
-
         Vector2 vel = new Vector2();
         if(dir.x > 0)
         {
@@ -208,11 +200,7 @@ public class BrontoController : EnemyController
         {
             vel = new Vector2(-speed.x, speed.y);
         }
-        
-        
-
         rigidBody.velocity = vel;
-
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

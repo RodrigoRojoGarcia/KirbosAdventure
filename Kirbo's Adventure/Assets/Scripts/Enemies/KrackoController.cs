@@ -18,6 +18,12 @@ public class KrackoController : EnemyController
 
     private bool vulnerable = true;
 
+    protected virtual void Awake()
+    {
+        base.Awake();
+        
+    }
+
     private void FixedUpdate()
     {
         if(health > healthPhaseTwoThreshhold)
@@ -29,7 +35,7 @@ public class KrackoController : EnemyController
         }
         else
         {
-            phaseThree.behaviourFixedUpdate();
+            phaseThree.behaviourFixedUpdate(Time.deltaTime);
         }
     }
 
@@ -41,5 +47,18 @@ public class KrackoController : EnemyController
     {
         health -= 10;
     }
+
+    public void launchThunder()
+    {
+        if(health > healthPhaseTwoThreshhold)
+        {
+            phaseOne.launchThunder();
+        }else if(health < healthPhaseThreeThreshhold)
+        {
+            phaseThree.launchThunder();
+        }
+    }
+
+    
 
 }

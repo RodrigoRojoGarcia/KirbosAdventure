@@ -24,24 +24,26 @@ public class KrackoPhaseTwo : MonoBehaviour
 
     public void behaviourFixedUpdate(float delta)
     {
+        animator.SetBool("midDash", midDash);
+
         if (midDash) return;
         if(timeSinceDash < restingTime)
         {
-
+            evade();
             timeSinceDash += delta;
         }
         else
         {
-          
             dash();
             timeSinceDash = 0;
-            
-            
+    
         }
     }
 
     public void dash()
     {
+        midDash = true;
+        gameObject.GetComponent<KrackoController>().setVulnerable(false);
         Vector2 dir = GameManager.instance.kirbo.gameObject.transform.position - transform.position;
         dir.Normalize();
 
@@ -49,10 +51,28 @@ public class KrackoPhaseTwo : MonoBehaviour
     }
 
 
+    public void evade()
+    {
+        Vector2 dir =   transform.position - GameManager.instance.kirbo.gameObject.transform.position;
+        dir.Normalize();
+        Vector2 vel = new Vector2();
+        if (dir.x > 0)
+        {
+            vel = new Vector2(speed.x, speed.y);
+        }
+        else
+        {
+            vel = new Vector2(-speed.x, speed.y);
+        }
+        rigidBody.velocity = vel;
+    }
+
+
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         midDash = false;
-
+        gameObject.GetComponent<KrackoController>().setVulnerable(true);
     }
 
 }

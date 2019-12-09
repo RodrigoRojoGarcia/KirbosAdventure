@@ -79,6 +79,8 @@ public class KrackoPhaseOne : MonoBehaviour
         
 
         t.GetComponent<Rigidbody2D>().velocity = dir * thunderSpeed;
+
+        resetTimeSinceLastThunder();
     }
 
 
