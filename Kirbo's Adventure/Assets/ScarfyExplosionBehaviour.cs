@@ -21,7 +21,7 @@ public class ScarfyExplosionBehaviour : StateMachineBehaviour
     {
         animator.GetComponent<ScarfyController>().explosionDmg();
 
-        
+        GameObject.Destroy(animator.gameObject);
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

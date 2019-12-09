@@ -4,8 +4,23 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    private void OnCollisionEnter2D(Collision2D collision)
+    private float timeOfLife = 0;
+
+    [SerializeField] private float maxTimeOfLiving;
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(gameObject);
+        if (collision.gameObject == GameManager.instance.kirbo.gameObject)
+            Destroy(gameObject);
+    }
+
+    private void Update()
+    {
+        timeOfLife += Time.deltaTime;
+
+        if(timeOfLife > maxTimeOfLiving)
+        {
+            Destroy(gameObject);
+        }
     }
 }

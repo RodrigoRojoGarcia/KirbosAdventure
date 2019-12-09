@@ -127,4 +127,7 @@ public class ConerController : EnemyController
     {
         this.hidedInShell = false;
     }
+
+
+    
 }

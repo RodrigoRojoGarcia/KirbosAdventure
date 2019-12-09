@@ -133,7 +133,7 @@ public class ScarfyController : EnemyController
                 if (col.gameObject == GameManager.instance.kirbo.gameObject)
                 {
                     GameManager.instance.kirbo.GetComponent<PlayerMovement>().addHealth(-1);
-                    Debug.Log("DAÑO");
+                    
                 }
             }
         }
