@@ -339,4 +339,10 @@ public class SimirrorController : EnemyController
 
     public void setFiring(bool fire) { this.firing = fire; }
     public void resetTimeSinceLastTp() { this.timeSinceLastTp = 0; }
+
+    public override void getHit()
+    {
+        Destroy(gameObject);
+
+    }
 }

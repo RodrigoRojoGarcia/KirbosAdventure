@@ -110,8 +110,12 @@ public class ConerController : EnemyController
         transform.localScale = theScale;
     }
 
+    public override void getHit()
+    {
+        Destroy(gameObject);
+
+    }
 
 
 
-    
 }

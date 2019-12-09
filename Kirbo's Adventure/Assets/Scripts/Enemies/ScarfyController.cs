@@ -130,5 +130,9 @@ public class ScarfyController : EnemyController
         transform.localScale = theScale;
     }
 
+    public override void getHit()
+    {
+        Destroy(gameObject);
 
+    }
 }

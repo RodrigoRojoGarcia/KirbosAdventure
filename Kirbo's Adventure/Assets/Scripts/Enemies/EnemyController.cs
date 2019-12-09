@@ -30,4 +30,7 @@ public abstract class EnemyController : MonoBehaviour
     {
         kirboInSight = false;
     }
+
+
+    public abstract void getHit();
 }

@@ -228,4 +228,10 @@ public class BrontoController : EnemyController
         rigidBody.velocity = vel;
     }
 
+
+    public override void getHit()
+    {
+        Destroy(gameObject);
+
+    }
 }

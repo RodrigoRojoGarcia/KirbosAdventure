@@ -55,4 +55,9 @@ public class TogezoController : EnemyController
         }
     }
 
+    public override void getHit()
+    {
+        Destroy(gameObject);
+
+    }
 }

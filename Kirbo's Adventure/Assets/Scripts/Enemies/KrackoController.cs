@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class KrackoController : EnemyController
 {
-    [SerializeField] private float health;
+    [SerializeField] private int health;
     [SerializeField] private float healthPhaseTwoThreshhold;
     [SerializeField] private float healthPhaseThreeThreshhold;
 
@@ -13,14 +13,19 @@ public class KrackoController : EnemyController
     [SerializeField] private KrackoPhaseTwo phaseTwo;
     [SerializeField] private KrackoPhaseThree phaseThree;
 
+    [SerializeField] private int lifeLostFromHit = 10;
+
+
+    private bool vulnerable = true;
+
     private void FixedUpdate()
     {
         if(health > healthPhaseTwoThreshhold)
         {
-            phaseOne.behaviourFixedUpdate(rigidBody, animator, Time.deltaTime);
+            phaseOne.behaviourFixedUpdate(Time.deltaTime);
         }else if(health > healthPhaseThreeThreshhold)
         {
-            phaseTwo.behaviourFixedUpdate();
+            phaseTwo.behaviourFixedUpdate(Time.deltaTime);
         }
         else
         {
@@ -28,6 +33,13 @@ public class KrackoController : EnemyController
         }
     }
 
+    public void setVulnerable(bool vul) { this.vulnerable = vul; }
+    public bool isVulnerable() { return this.vulnerable; }
 
+
+    public override void getHit()
+    {
+        health -= 10;
+    }
 
 }

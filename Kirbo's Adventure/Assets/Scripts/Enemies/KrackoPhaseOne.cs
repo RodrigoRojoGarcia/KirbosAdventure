@@ -19,7 +19,18 @@ public class KrackoPhaseOne : MonoBehaviour
 
     private bool start = false;
 
-    public void behaviourFixedUpdate(Rigidbody2D rigidBody, Animator animator, float delta)
+    private Rigidbody2D rigidBody;
+    private Animator animator;
+
+    private void Awake()
+    {
+        rigidBody = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+    }
+
+
+
+    public void behaviourFixedUpdate(float delta)
     {
         if (!start)
         {
