@@ -239,7 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 570f0be30b29bdd4f9182dd9b49b8097, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisPrefab: {fileID: 0}
+  thisPrefab: {fileID: 3370561820503086787}
   speed: 0.7
   jumpForce: 2
   jumpCheck: {fileID: 3370561820815818716}
@@ -248,7 +248,7 @@ MonoBehaviour:
   groundCheck: {fileID: 3370561821806906342}
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 5120
   xDistancePatrolThreshhold: 2
   bullet: {fileID: 7970606242415729347, guid: 42e6e5e85e32f1c46a543604226d6bc9, type: 3}
   shotDelay: 1

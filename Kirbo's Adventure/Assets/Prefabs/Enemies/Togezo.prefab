@@ -113,6 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff6223fc12079504897abb23603a93be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thisPrefab: {fileID: 2562887193604614488}
   movementSpeed: 0.25
   rotationThreshold: 0.01
   rotationWaypoints:

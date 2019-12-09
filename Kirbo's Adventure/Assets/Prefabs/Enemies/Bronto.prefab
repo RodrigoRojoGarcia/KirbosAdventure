@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &962376041453476721
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8206352953591707887}
+  m_Layer: 9
+  m_Name: inFrontCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8206352953591707887
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962376041453476721}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.082, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 973202783341588334}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &973202782404834329
 GameObject:
   m_ObjectHideFlags: 0
@@ -81,7 +111,7 @@ GameObject:
   - component: {fileID: 973202783341588331}
   m_Layer: 9
   m_Name: Bronto
-  m_TagString: Untagged
+  m_TagString: absorbable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,6 +128,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 973202782404834328}
+  - {fileID: 8206352953591707887}
+  - {fileID: 8553149397047252124}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -217,8 +249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a68ab067b5d394990560aae087ffa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisPrefab: {fileID: 8630687756447557096, guid: 6aa4d880ce51c364eb3a504abc737b0e,
-    type: 3}
+  thisPrefab: {fileID: 973202783341588328}
   height: 1
   heightTreshhold: 0.5
   tagWalls: Walls
@@ -229,3 +260,39 @@ MonoBehaviour:
   bullet: {fileID: 7970606242415729347, guid: 42e6e5e85e32f1c46a543604226d6bc9, type: 3}
   shotDelay: 2
   bulletSpeed: 0.81
+  inFrontCollider: {fileID: 962376041453476721}
+  inFrontColliderRadius: 0.07
+  topCollider: {fileID: 4985127247486904501}
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 5120
+--- !u!1 &4985127247486904501
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8553149397047252124}
+  m_Layer: 9
+  m_Name: TopCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8553149397047252124
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4985127247486904501}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.074, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 973202783341588334}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

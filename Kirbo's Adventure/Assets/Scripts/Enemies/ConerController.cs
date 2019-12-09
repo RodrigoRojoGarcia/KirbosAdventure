@@ -49,6 +49,8 @@ public class ConerController : EnemyController
 
         if (!kirboInSight)
         {
+            tag = "absorbable";
+
             Vector2 vel = rigidBody.velocity;
 
             if (facingRight)
@@ -96,6 +98,10 @@ public class ConerController : EnemyController
 
             }
 
+        }
+        else
+        {
+            tag = "Untagged";
         }
 
         

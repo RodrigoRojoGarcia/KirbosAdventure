@@ -19,6 +19,15 @@ public class BrontoController : EnemyController
     [SerializeField] private float bulletSpeed;
 
 
+    [SerializeField] private GameObject inFrontCollider;
+    [SerializeField] private float inFrontColliderRadius;
+    [SerializeField] private GameObject topCollider;
+
+    private Collider2D[] collidersInFront = new Collider2D[8];
+    private Collider2D[] colliderOnTop = new Collider2D[8];
+
+    [SerializeField] private LayerMask whatIsGround;
+
     private bool patrol;
     private bool pursue;
 
@@ -29,9 +38,18 @@ public class BrontoController : EnemyController
 
     private bool firing = false;
 
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(inFrontCollider.transform.position, inFrontColliderRadius);
+        Gizmos.DrawWireSphere(topCollider.transform.position, inFrontColliderRadius);
+    }
+
 
     private void FixedUpdate()
     {
+
+
 
         if(rigidBody.velocity.x > 0 && !facingRight)
         {
@@ -70,6 +88,24 @@ public class BrontoController : EnemyController
         }
 
         #endregion
+
+        Physics2D.OverlapCircleNonAlloc(inFrontCollider.transform.position, inFrontColliderRadius, collidersInFront, whatIsGround);
+        bool turn = false;
+        foreach (Collider2D col in collidersInFront)
+        {
+
+            if (col != null)
+            {
+                if (col.gameObject == this) continue;
+                turn = true;
+            }
+        }
+        if (turn)
+        {
+            Flip();
+            collidersInFront = new Collider2D[8];
+        }
+
         if (!kirboInSight)
         {
             patrolMovement(actualHeight);
@@ -164,6 +200,7 @@ public class BrontoController : EnemyController
         Vector2 vel = rigidBody.velocity;
         if (transform.position.y > actualHeight + heightTreshhold)
         {
+
             vel = new Vector2(speed.x, -speed.y);
 
         }
@@ -171,6 +208,34 @@ public class BrontoController : EnemyController
         {
             vel = new Vector2(speed.x, speed.y);
         }
+
+        if ((facingRight && vel.x < 0) || (!facingRight && vel.x > 0))
+        {
+            vel.x *= -1;
+        }
+
+
+        Physics2D.OverlapCircleNonAlloc(topCollider.transform.position, inFrontColliderRadius, colliderOnTop, whatIsGround);
+        bool turn = false;
+        foreach (Collider2D col in colliderOnTop)
+        {
+
+            if (col != null)
+            {
+                if (col.gameObject == this) continue;
+                turn = true;
+            }
+        }
+        if (turn)
+        {
+            if(vel.y > 0)
+            {
+                vel.y *= -1;
+            }
+            colliderOnTop = new Collider2D[8];
+        }
+
+
         rigidBody.velocity = vel;
     }
 
@@ -203,7 +268,7 @@ public class BrontoController : EnemyController
         rigidBody.velocity = vel;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
         midDash = false;
         

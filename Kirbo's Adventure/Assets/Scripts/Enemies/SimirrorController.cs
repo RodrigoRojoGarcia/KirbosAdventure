@@ -158,7 +158,7 @@ public class SimirrorController : EnemyController
         }
         if (jump && grounded)
         {
-            Debug.Log("jump");
+
             rigidBody.velocity = (new Vector2(rigidBody.velocity.x, jumpForce));
         }
         collidersInFront = new Collider2D[8];

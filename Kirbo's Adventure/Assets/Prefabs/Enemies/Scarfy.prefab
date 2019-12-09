@@ -158,7 +158,7 @@ MonoBehaviour:
   groundCheck: {fileID: 2998944493735981154}
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 5120
   jumpForce: {x: 0.8, y: 3.5}
   explosionRadius: 0.15
 --- !u!1 &2998944493735981154

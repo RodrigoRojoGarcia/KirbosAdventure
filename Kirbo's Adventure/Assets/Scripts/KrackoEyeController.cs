@@ -11,6 +11,7 @@ public class KrackoEyeController : MonoBehaviour
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        Physics2D.IgnoreLayerCollision(11, 12);
     }
 
 

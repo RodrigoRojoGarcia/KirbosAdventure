@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -24,6 +25,8 @@ public class GameManager : MonoBehaviour
 
     public PlayerController kirbo;
 
+    public KrackoController kracko;
+
 
     private void Awake()
     {
@@ -39,6 +42,14 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(kirbo.getHealth() <= 0)
+        {
+            SceneManager.LoadScene(0);
+        }
+
+        if(kracko.getHealth() <= 0)
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 }

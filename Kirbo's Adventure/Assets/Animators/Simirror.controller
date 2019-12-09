@@ -789,7 +789,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: anim_simirror_walk
+  m_Name: Idle
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -853,22 +853,22 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 1102962396025473516}
-    m_Position: {x: 36, y: 240, z: 0}
+    m_Position: {x: 12, y: 324, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102302645857468242}
-    m_Position: {x: -132, y: 144, z: 0}
+    m_Position: {x: -156, y: 180, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102610519586441572}
-    m_Position: {x: 132, y: 120, z: 0}
+    m_Position: {x: 60, y: 180, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 36, y: 48, z: 0}
+  m_AnyStatePosition: {x: 24, y: 36, z: 0}
   m_EntryPosition: {x: -264, y: 240, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
-  m_ParentStateMachinePosition: {x: 384, y: 48, z: 0}
+  m_ParentStateMachinePosition: {x: 312, y: 24, z: 0}
   m_DefaultState: {fileID: 1102962396025473516}
 --- !u!1109 &1109716206251655336
 AnimatorTransition:

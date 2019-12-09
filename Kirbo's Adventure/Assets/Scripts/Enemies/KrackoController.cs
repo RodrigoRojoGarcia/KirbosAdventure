@@ -26,17 +26,22 @@ public class KrackoController : EnemyController
 
     private void FixedUpdate()
     {
-        if(health > healthPhaseTwoThreshhold)
+
+        if (kirboInSight)
         {
-            phaseOne.behaviourFixedUpdate(Time.deltaTime);
-        }else if(health > healthPhaseThreeThreshhold)
-        {
-            phaseTwo.behaviourFixedUpdate(Time.deltaTime);
+            if(health > healthPhaseTwoThreshhold)
+            {
+                phaseOne.behaviourFixedUpdate(Time.deltaTime);
+            }else if(health > healthPhaseThreeThreshhold)
+            {
+                phaseTwo.behaviourFixedUpdate(Time.deltaTime);
+            }
+            else
+            {
+                phaseThree.behaviourFixedUpdate(Time.deltaTime);
+            }
         }
-        else
-        {
-            phaseThree.behaviourFixedUpdate(Time.deltaTime);
-        }
+        
     }
 
     public void setVulnerable(bool vul) { this.vulnerable = vul; }
@@ -60,5 +65,5 @@ public class KrackoController : EnemyController
     }
 
     
-
+    public int getHealth() { return this.health; }
 }

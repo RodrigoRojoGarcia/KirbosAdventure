@@ -160,7 +160,7 @@ GameObject:
   - component: {fileID: 6093495379240991541}
   m_Layer: 9
   m_Name: Coner
-  m_TagString: Untagged
+  m_TagString: absorbable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -305,4 +305,4 @@ MonoBehaviour:
   inFrontCollidersRadius: 0.03
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 5120
