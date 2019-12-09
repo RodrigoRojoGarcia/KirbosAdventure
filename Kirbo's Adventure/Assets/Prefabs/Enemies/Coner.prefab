@@ -112,6 +112,8 @@ MonoBehaviour:
   tagWall: Walls
   tagPlayer: Player
   thisAgent: {fileID: 6093495379240991528}
+  executeEnter: 1
+  executeExit: 1
 --- !u!1 &6093495378854846190
 GameObject:
   m_ObjectHideFlags: 0

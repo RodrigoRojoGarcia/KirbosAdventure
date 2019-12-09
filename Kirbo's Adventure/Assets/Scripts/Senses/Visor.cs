@@ -8,7 +8,8 @@ public class Visor : MonoBehaviour
     [SerializeField] private string tagWall;
     [SerializeField] private string tagPlayer;
     [SerializeField] private GameObject thisAgent;
-
+    [SerializeField] private bool executeEnter;
+    [SerializeField] private bool executeExit;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +30,8 @@ public class Visor : MonoBehaviour
         {
             if (thisAgent.GetComponent<EnemyController>() != null)
             {
-                Debug.Log("uwu");
+                
+                if(executeExit)
                 thisAgent.GetComponent<EnemyController>().StopSeePlayer();
             }
         }
@@ -71,7 +73,7 @@ public class Visor : MonoBehaviour
                 playerseen = true;
                 if (thisAgent.GetComponent<EnemyController>() != null)
                 {
-
+                    if(executeEnter)
                     thisAgent.GetComponent<EnemyController>().SeePlayer();
                 }
 
@@ -84,7 +86,7 @@ public class Visor : MonoBehaviour
         {
             if(thisAgent.GetComponent<EnemyController>() != null)
             {
-                
+                if(executeExit)
                 thisAgent.GetComponent<EnemyController>().StopSeePlayer();
             }
         }

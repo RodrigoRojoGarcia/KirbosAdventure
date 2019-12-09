@@ -107,13 +107,13 @@ public class BrontoController : EnemyController
                 
                 if (distance < evadeDistance)
                 {
-                    Debug.Log("evade");
+
                     evadeMovement(actualHeight);
                 }
                 else
                 {
                     
-                    Debug.Log("FIRE");
+                    
                     if(!firing)
                     StartFiring();
                 }

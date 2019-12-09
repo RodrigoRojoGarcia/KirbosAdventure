@@ -263,6 +263,16 @@ PrefabInstance:
       propertyPath: thisAgent
       value: 
       objectReference: {fileID: 2998944493671125034}
+    - target: {fileID: 8969769461909495696, guid: 84e2a23444ed0c648ab0a83885d51618,
+        type: 3}
+      propertyPath: executeExit
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8969769461909495696, guid: 84e2a23444ed0c648ab0a83885d51618,
+        type: 3}
+      propertyPath: executeEnter
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9120343587080610615, guid: 84e2a23444ed0c648ab0a83885d51618,
         type: 3}
       propertyPath: m_Offset.x
