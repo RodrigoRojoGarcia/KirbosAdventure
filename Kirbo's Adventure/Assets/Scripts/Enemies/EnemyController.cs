@@ -14,6 +14,7 @@ public abstract class EnemyController : MonoBehaviour
 
     protected virtual void Awake()
     {
+        Physics2D.IgnoreLayerCollision(9, 9);
         rigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }

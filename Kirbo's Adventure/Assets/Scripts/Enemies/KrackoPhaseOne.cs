@@ -47,8 +47,8 @@ public class KrackoPhaseOne : MonoBehaviour
         }
         else
         {
-            launchThunder();
-            timeSinceLastThunder = 0;
+            animator.SetTrigger("thunder");
+            
         }
 
 
@@ -60,7 +60,7 @@ public class KrackoPhaseOne : MonoBehaviour
 
     }
 
-    private void launchThunder()
+    public void launchThunder()
     {
         GameObject t = Instantiate(thunder, thunderSpawn.transform.position, thunderSpawn.transform.rotation);
 
@@ -68,5 +68,11 @@ public class KrackoPhaseOne : MonoBehaviour
         
 
         t.GetComponent<Rigidbody2D>().velocity = dir * thunderSpeed;
+    }
+
+
+    public void resetTimeSinceLastThunder()
+    {
+        timeSinceLastThunder = 0;
     }
 }
